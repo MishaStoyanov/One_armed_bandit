@@ -1,0 +1,16 @@
+all: bandit
+
+bandit: main.o inputMoney.o result.o
+	gcc main.o inputMoney.o result.o -o bandit
+
+main.o: main.c
+	gcc -c main.c
+
+inputMoney.o: inputMoney.c
+	gcc -c inputMoney.c
+
+result.o: result.c
+	gcc -c result.c
+
+clean:
+	rm -rf *.o bandit
